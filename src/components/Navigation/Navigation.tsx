@@ -1,17 +1,17 @@
+import "./Navigation.css";
 function Navigation() {
   return (
-    <nav className="navigation">
+    <nav className="navigation-component">
+      <img src="/test.png" alt="Portfolio Logo" />
       <div>
-        <img src="/logo.svg" alt="Portfolio Logo" />
+        <ul>
+          <li>Home</li>
+          <li>Projects</li>
+          <li>Articles</li>
+          <li>Contact</li>
+        </ul>
       </div>
-      <ul>
-        <li>Home</li>
-        <li>Projects</li>
-        <li>Articles</li>
-        <li>Contact</li>
-      </ul>
     </nav>
   );
 }
-
 export default Navigation;

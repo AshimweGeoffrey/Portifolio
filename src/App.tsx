@@ -10,14 +10,18 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <Navigation />
+        <div className="navigation">
+          <Navigation />
+        </div>
         <Main />
         <Skills />
         <Projects />
         <Testimonials />
         <Technologies />
       </div>
-      <Footer />
+      <div className="footer">
+        <Footer />
+      </div>
     </>
   );
 }

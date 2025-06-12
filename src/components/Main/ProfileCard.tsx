@@ -1,8 +1,8 @@
 function ProfileCard() {
   return (
-    <div>
-      <img src="/main.jpeg" alt="Profile" />
-      <h5>Software Engineer</h5>
+    <div className="profile-card">
+      <img src="main.png" alt="Person" style={{ background: "transparent" }} />
+      <h3>Software Engineer</h3>
       <h2>Ashimwe Geoffrey</h2>
       <button>Contact</button>
     </div>

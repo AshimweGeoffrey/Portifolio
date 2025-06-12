@@ -1,9 +1,10 @@
+import "./Main.css";
 import liveDemoIcon from "../../assets/liveDemoIcon.svg";
 import ProfileCard from "./ProfileCard";
 function Main() {
   return (
-    <div>
-      <div>
+    <div className="main-hero">
+      <div className="main-hero-content">
         <h1>Ashimwe Geoffrey</h1>
         <p>
           Passionate about building scalable web applications that drive
@@ -11,14 +12,18 @@ function Main() {
           across multiple sectors with a focus on performance optimization and
           clean code.
         </p>
-        <div>
-          <button>Resume</button>
-          <button>
-            <img src={liveDemoIcon} alt="Live Demo" />
+        <div className="main-hero-buttons">
+          <button className="main-hero-resume-btn">Resume</button>
+          <button className="main-hero-live-demo-btn">
+            <img
+              src={liveDemoIcon}
+              alt="Live Demo"
+              className="main-hero-live-demo-icon"
+            />
             Live Demo Latest Project
           </button>
         </div>
-        <div>
+        <div className="main-hero-description">
           <h4>Descrption</h4>
           <p>
             I'm a <span>Software Engineer</span> from Kigali, Rwanda, with
