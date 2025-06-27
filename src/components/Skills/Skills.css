@@ -1,0 +1,342 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+@layer variables {
+  :root {
+    /* COLORS */
+    --big-stone-50: #f5f7fa;
+    --big-stone-100: #eaeef4;
+    --big-stone-200: #d0dbe7;
+    --big-stone-300: #a6bcd3;
+    --big-stone-400: #7799b9;
+    --big-stone-500: #557ca2;
+    --big-stone-600: #426287;
+    --big-stone-700: #37506d;
+    --big-stone-800: #30455c;
+    --big-stone-900: #2c3c4e;
+    --big-stone-950: #1f2937; /* Main Background Color */
+    --mirage-50: #f0f7fe;
+    --mirage-100: #deecfb;
+    --mirage-200: #c4e0f9;
+    --mirage-300: #9cccf4;
+    --mirage-400: #6dafed;
+    --mirage-500: #4b90e6;
+    --mirage-600: #3674da;
+    --mirage-700: #2d60c8;
+    --mirage-800: #2a4fa3;
+    --mirage-900: #274481;
+    --mirage-950: #0f172a; /* Footer Background Color */
+    --mountain-meadow-50: #ecfdf7;
+    --mountain-meadow-100: #d1faec;
+    --mountain-meadow-200: #a7f3da;
+    --mountain-meadow-300: #6ee7bf;
+    --mountain-meadow-400: #34d39e;
+    --mountain-meadow-500: #10b981; /* Green Text Color */
+    --mountain-meadow-600: #059666;
+    --mountain-meadow-700: #047852;
+    --mountain-meadow-800: #065f42;
+    --mountain-meadow-900: #064e36;
+    --mountain-meadow-950: #022c1e;
+    --white-50: #ffffff; /* White Main Text Color */
+    --white-100: #efefef;
+    --white-200: #dcdcdc;
+    --white-300: #bdbdbd;
+    --white-400: #989898;
+    --white-500: #7c7c7c;
+    --white-600: #656565;
+    --white-700: #525252;
+    --white-800: #464646;
+    --white-900: #3d3d3d;
+    --white-950: #292929;
+  }
+}
+@layer conner-feat {
+  /* Simple Corner Brackets - Top-left and Bottom-right */
+  .corner-brackets {
+    position: relative;
+    /* Add padding to give space for the corners */
+    padding: 20px;
+  }
+
+  .corner-brackets::before,
+  .corner-brackets::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Top-left corner */
+  .corner-brackets::before {
+    top: 0;
+    left: 0;
+    border-top: 3px solid #333;
+    border-left: 3px solid #333;
+  }
+
+  /* Bottom-right corner */
+  .corner-brackets::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px solid #333;
+    border-right: 3px solid #333;
+  }
+
+  /* Alternative: All 4 corners using one element */
+  .corner-brackets-all {
+    position: relative;
+    padding: 20px;
+  }
+
+  .corner-brackets-all::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        /* Top-left corner */ linear-gradient(
+          to right,
+          #333 0%,
+          #333 20px,
+          transparent 20px
+        )
+        0 0 / 100% 3px,
+      linear-gradient(to bottom, #333 0%, #333 20px, transparent 20px) 0 0 / 3px
+        100%,
+      /* Top-right corner */
+        linear-gradient(to left, #333 0%, #333 20px, transparent 20px) 100% 0 /
+        100% 3px,
+      linear-gradient(to bottom, #333 0%, #333 20px, transparent 20px) 100% 0 /
+        3px 100%,
+      /* Bottom-left corner */
+        linear-gradient(to right, #333 0%, #333 20px, transparent 20px) 0 100% /
+        100% 3px,
+      linear-gradient(to top, #333 0%, #333 20px, transparent 20px) 0 100% / 3px
+        100%,
+      /* Bottom-right corner */
+        linear-gradient(to left, #333 0%, #333 20px, transparent 20px) 100% 100% /
+        100% 3px,
+      linear-gradient(to top, #333 0%, #333 20px, transparent 20px) 100% 100% /
+        3px 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  /* Customizable variables version */
+  .corner-brackets-custom {
+    --corner-size: 25px;
+    --corner-thickness: 2px;
+    --corner-color: #007bff;
+
+    position: relative;
+    padding: 20px;
+  }
+
+  .corner-brackets-custom::before,
+  .corner-brackets-custom::after {
+    content: "";
+    position: absolute;
+    width: var(--corner-size);
+    height: var(--corner-size);
+  }
+
+  .corner-brackets-custom::before {
+    top: 0;
+    left: 0;
+    border-top: var(--corner-thickness) solid var(--corner-color);
+    border-left: var(--corner-thickness) solid var(--corner-color);
+  }
+
+  .corner-brackets-custom::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: var(--corner-thickness) solid var(--corner-color);
+    border-right: var(--corner-thickness) solid var(--corner-color);
+  }
+}
+@layer components {
+  .skills-card {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 526px;
+    flex-shrink: 0;
+    border-radius: 151px;
+    border: 2px solid rgba(255, 255, 255, 0.27);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(20px);
+    p {
+      width: 732px;
+      color: #fff;
+
+      font-family: Inter;
+      html,
+      body,
+      #root {
+        height: 100%;
+        width: 100%;
+      }
+
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+    img {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      margin-top: 0;
+      bottom: 160px;
+    }
+  }
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--big-stone-950);
+  }
+  .skills-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+    height: 100%;
+  }
+  .skills-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    h3 {
+      color: #fff;
+      text-shadow: 0px -9px 80px rgba(0, 0, 0, 0.26),
+        0px -4.504px 40.039px rgba(0, 0, 0, 0.2),
+        0px -2.713px 24.118px rgba(0, 0, 0, 0.17),
+        0px -1.739px 15.456px rgba(0, 0, 0, 0.15),
+        0px -1.127px 10.017px rgba(0, 0, 0, 0.13),
+        0px -0.709px 6.306px rgba(0, 0, 0, 0.11),
+        0px -0.408px 3.623px rgba(0, 0, 0, 0.09),
+        0px -0.179px 1.595px rgba(0, 0, 0, 0.06);
+      font-family: Inter;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    p {
+      width: 732px;
+      color: var(--white-200);
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: normal;
+    }
+    button {
+      width: 182px;
+      height: 64px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      border: 2px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 100;
+      line-height: normal;
+    }
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: background-color 0.3s ease;
+      border: var(--mountain-meadow-800) solid 0.5px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+}

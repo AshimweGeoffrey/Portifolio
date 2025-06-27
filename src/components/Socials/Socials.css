@@ -1,0 +1,62 @@
+/* Top-centered socials (before scroll) */
+.socials-top {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  z-index: 9999;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 18px 22px -6px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(110.4px);
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+
+/* Side vertical socials (after scroll) */
+.socials-side {
+  position: fixed;
+  bottom: 50%;
+  left: 3%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  z-index: 9999;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 18px 22px -6px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(110.4px);
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+.socials-top a svg,
+.socials-side a svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+.socials-top a:hover svg,
+.socials-side a:hover svg {
+  transform: scale(1.2);
+  color: #1da1f2; /* Twitter blue, or pick your brand highlight */
+}
+/* Optional targeted hovers */
+.socials-top a:hover:nth-child(1) svg,
+.socials-side a:hover:nth-child(1) svg {
+  color: #6e5494; /* GitHub purple */
+}
+
+.socials-top a:hover:nth-child(2) svg,
+.socials-side a:hover:nth-child(2) svg {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.socials-top a:hover:nth-child(3) svg,
+.socials-side a:hover:nth-child(3) svg {
+  color: #1da1f2; /* Twitter blue */
+}

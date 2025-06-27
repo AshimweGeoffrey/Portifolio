@@ -1,0 +1,482 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+@layer variables {
+  :root {
+    /* COLORS */
+    --big-stone-50: #f5f7fa;
+    --big-stone-100: #eaeef4;
+    --big-stone-200: #d0dbe7;
+    --big-stone-300: #a6bcd3;
+    --big-stone-400: #7799b9;
+    --big-stone-500: #557ca2;
+    --big-stone-600: #426287;
+    --big-stone-700: #37506d;
+    --big-stone-800: #30455c;
+    --big-stone-900: #2c3c4e;
+    --big-stone-950: #1f2937; /* Main Background Color */
+    --mirage-50: #f0f7fe;
+    --mirage-100: #deecfb;
+    --mirage-200: #c4e0f9;
+    --mirage-300: #9cccf4;
+    --mirage-400: #6dafed;
+    --mirage-500: #4b90e6;
+    --mirage-600: #3674da;
+    --mirage-700: #2d60c8;
+    --mirage-800: #2a4fa3;
+    --mirage-900: #274481;
+    --mirage-950: #0f172a; /* Footer Background Color */
+    --mountain-meadow-50: #ecfdf7;
+    --mountain-meadow-100: #d1faec;
+    --mountain-meadow-200: #a7f3da;
+    --mountain-meadow-300: #6ee7bf;
+    --mountain-meadow-400: #34d39e;
+    --mountain-meadow-500: #10b981; /* Green Text Color */
+    --mountain-meadow-600: #059666;
+    --mountain-meadow-700: #047852;
+    --mountain-meadow-800: #065f42;
+    --mountain-meadow-900: #064e36;
+    --mountain-meadow-950: #022c1e;
+    --white-50: #ffffff; /* White Main Text Color */
+    --white-100: #efefef;
+    --white-200: #dcdcdc;
+    --white-300: #bdbdbd;
+    --white-400: #989898;
+    --white-500: #7c7c7c;
+    --white-600: #656565;
+    --white-700: #525252;
+    --white-800: #464646;
+    --white-900: #3d3d3d;
+    --white-950: #292929;
+  }
+}
+@layer conner-feat {
+  /* Simple Corner Brackets - Top-left and Bottom-right */
+  .corner-brackets {
+    position: relative;
+    /* Add padding to give space for the corners */
+    padding: 20px;
+  }
+
+  .corner-brackets::before,
+  .corner-brackets::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Top-left corner */
+  .corner-brackets::before {
+    top: 0;
+    left: 0;
+    border-top: 3px solid #333;
+    border-left: 3px solid #333;
+  }
+
+  /* Bottom-right corner */
+  .corner-brackets::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px solid #333;
+    border-right: 3px solid #333;
+  }
+
+  /* Alternative: All 4 corners using one element */
+  .corner-brackets-all {
+    position: relative;
+    padding: 20px;
+  }
+
+  .corner-brackets-all::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+          /* Top-left corner */ linear-gradient(
+          to right,
+          #333 0%,
+          #333 20px,
+          transparent 20px
+        )
+        0 0 / 100% 3px,
+      linear-gradient(to bottom, #333 0%, #333 20px, transparent 20px) 0 0 / 3px
+        100%,
+      /* Top-right corner */
+        linear-gradient(to left, #333 0%, #333 20px, transparent 20px) 100% 0 /
+        100% 3px,
+      linear-gradient(to bottom, #333 0%, #333 20px, transparent 20px) 100% 0 /
+        3px 100%,
+      /* Bottom-left corner */
+        linear-gradient(to right, #333 0%, #333 20px, transparent 20px) 0 100% /
+        100% 3px,
+      linear-gradient(to top, #333 0%, #333 20px, transparent 20px) 0 100% / 3px
+        100%,
+      /* Bottom-right corner */
+        linear-gradient(to left, #333 0%, #333 20px, transparent 20px) 100% 100% /
+        100% 3px,
+      linear-gradient(to top, #333 0%, #333 20px, transparent 20px) 100% 100% /
+        3px 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  /* Customizable variables version */
+  .corner-brackets-custom {
+    --corner-size: 25px;
+    --corner-thickness: 2px;
+    --corner-color: #007bff;
+
+    position: relative;
+    padding: 20px;
+  }
+
+  .corner-brackets-custom::before,
+  .corner-brackets-custom::after {
+    content: "";
+    position: absolute;
+    width: var(--corner-size);
+    height: var(--corner-size);
+  }
+
+  .corner-brackets-custom::before {
+    top: 0;
+    left: 0;
+    border-top: var(--corner-thickness) solid var(--corner-color);
+    border-left: var(--corner-thickness) solid var(--corner-color);
+  }
+
+  .corner-brackets-custom::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: var(--corner-thickness) solid var(--corner-color);
+    border-right: var(--corner-thickness) solid var(--corner-color);
+  }
+}
+@layer component {
+  .error-message {
+    color: #ff6b6b !important;
+    font-weight: 500;
+  }
+
+  .project-card {
+    background: var(--white-50);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--big-stone-200);
+  }
+
+  .project-card::before {
+    font-family: "Inter";
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--mountain-meadow-500),
+      var(--mirage-600),
+      var(--big-stone-600)
+    );
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    border-color: var(--mountain-meadow-300);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--big-stone-900);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .project-title:hover {
+    color: var(--mountain-meadow-500);
+  }
+
+  .github-link {
+    color: var(--big-stone-600);
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .github-link:hover {
+    color: var(--mountain-meadow-500);
+  }
+
+  .project-description {
+    color: var(--big-stone-700);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--big-stone-600);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .language-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .language-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Language Colors */
+  .lang-javascript {
+    background: var(--mirage-100);
+    color: var(--mirage-700);
+  }
+  .lang-javascript .language-dot {
+    background: var(--mirage-600);
+  }
+
+  .lang-python {
+    background: var(--big-stone-100);
+    color: var(--big-stone-700);
+  }
+  .lang-python .language-dot {
+    background: var(--big-stone-600);
+  }
+
+  .lang-html {
+    background: var(--mountain-meadow-100);
+    color: var(--mountain-meadow-700);
+  }
+  .lang-html .language-dot {
+    background: var(--mountain-meadow-500);
+  }
+
+  .lang-css {
+    background: var(--mirage-100);
+    color: var(--mirage-700);
+  }
+  .lang-css .language-dot {
+    background: var(--mirage-500);
+  }
+
+  .lang-react {
+    background: var(--mountain-meadow-100);
+    color: var(--mountain-meadow-800);
+  }
+  .lang-react .language-dot {
+    background: var(--mountain-meadow-500);
+  }
+
+  .lang-typescript {
+    background: var(--mirage-100);
+    color: var(--mirage-700);
+  }
+  .lang-typescript .language-dot {
+    background: var(--mirage-600);
+  }
+
+  .lang-java {
+    background: var(--big-stone-100);
+    color: var(--big-stone-700);
+  }
+  .lang-java .language-dot {
+    background: var(--big-stone-600);
+  }
+
+  .lang-cpp,
+  .lang-c {
+    background: var(--big-stone-100);
+    color: var(--big-stone-700);
+  }
+  .lang-cpp .language-dot,
+  .lang-c .language-dot {
+    background: var(--big-stone-600);
+  }
+
+  .lang-unknown {
+    background: var(--white-200);
+    color: var(--white-700);
+  }
+  .lang-unknown .language-dot {
+    background: var(--white-500);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: var(--mountain-meadow-500);
+    color: var(--white-50);
+  }
+
+  .btn-primary:hover {
+    background: var(--mountain-meadow-600);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--big-stone-600);
+    border: 1.5px solid var(--big-stone-300);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--mountain-meadow-500);
+    color: var(--mountain-meadow-500);
+  }
+
+  /* Loading Spinner */
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--big-stone-300);
+    border-top: 4px solid var(--mountain-meadow-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Responsive Design */
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+}

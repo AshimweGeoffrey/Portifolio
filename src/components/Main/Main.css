@@ -148,7 +148,7 @@
       position: absolute;
       inset: 0;
       background: transparent;
-      clip-path: ellipse(50% 30px at 48% 0%);
+      clip-path: ellipse(20% 100px at 50% 0%);
       z-index: -1;
       background-color: var(--big-stone-950);
     }
@@ -175,7 +175,7 @@
       border: var(--big-stone-200) solid 0.125px;
       font: rgba(255, 255, 255, 0.75) 400 16px "Inter", sans-serif;
       background-color: transparent;
-      border-radius: 5px;
+      border-radius: 20px;
       color: var(--white-50);
       font-family: "Inter", sans-serif;
       font-size: 16px;
@@ -192,7 +192,13 @@
       border-bottom-right-radius: 100px;
       margin-bottom: -150px;
     }
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: background-color 0.3s ease;
+      border: var(--mountain-meadow-800) solid 0.5px;
+    }
   }
+
   .main-hero-content {
     h1 {
       font-family: "Inter";
@@ -210,6 +216,13 @@
       font-style: normal;
       font-weight: 50;
       line-height: normal;
+    }
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: background-color 0.3s ease;
+      border: var(--mountain-meadow-800) solid 0.5px;
+      border-radius: 20px;
+      cursor: pointer;
     }
   }
   .main-hero-buttons {
@@ -238,14 +251,15 @@
     gap: 12px;
     background-color: transparent;
     border: none;
-    font-family: Inter;
+    color: #fff;
+    font-family: "Inter";
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     img {
-      width: 64px;
-      height: 64px;
+      width: 50px;
+      height: 50px;
     }
   }
   .main-hero-description {
@@ -285,5 +299,111 @@
       font-weight: 400;
       line-height: normal;
     }
+  }
+}
+@layer conner-feat {
+  /* Simple Corner Brackets - Top-left and Bottom-right */
+  .corner-brackets {
+    position: relative;
+    /* Add padding to give space for the corners */
+    padding: 20px;
+  }
+
+  .corner-brackets::before,
+  .corner-brackets::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Top-left corner */
+  .corner-brackets::before {
+    top: 0;
+    left: 0;
+    border-top: 3px solid #333;
+    border-left: 3px solid #333;
+  }
+
+  /* Bottom-right corner */
+  .corner-brackets::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px solid #333;
+    border-right: 3px solid #333;
+  }
+
+  /* Alternative: All 4 corners using one element */
+  .corner-brackets-all {
+    position: relative;
+    padding: 20px;
+  }
+
+  .corner-brackets-all::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      /* Top-left corner */ linear-gradient(
+          to right,
+          #333 0%,
+          #333 20px,
+          transparent 20px
+        )
+        0 0 / 100% 3px,
+      linear-gradient(to bottom, #333 0%, #333 20px, transparent 20px) 0 0 / 3px
+        100%,
+      /* Top-right corner */
+        linear-gradient(to left, #333 0%, #333 20px, transparent 20px) 100% 0 /
+        100% 3px,
+      linear-gradient(to bottom, #333 0%, #333 20px, transparent 20px) 100% 0 /
+        3px 100%,
+      /* Bottom-left corner */
+        linear-gradient(to right, #333 0%, #333 20px, transparent 20px) 0 100% /
+        100% 3px,
+      linear-gradient(to top, #333 0%, #333 20px, transparent 20px) 0 100% / 3px
+        100%,
+      /* Bottom-right corner */
+        linear-gradient(to left, #333 0%, #333 20px, transparent 20px) 100% 100% /
+        100% 3px,
+      linear-gradient(to top, #333 0%, #333 20px, transparent 20px) 100% 100% /
+        3px 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  /* Customizable variables version */
+  .corner-brackets-custom {
+    --corner-size: 25px;
+    --corner-thickness: 2px;
+    --corner-color: #007bff;
+
+    position: relative;
+    padding: 20px;
+  }
+
+  .corner-brackets-custom::before,
+  .corner-brackets-custom::after {
+    content: "";
+    position: absolute;
+    width: var(--corner-size);
+    height: var(--corner-size);
+  }
+
+  .corner-brackets-custom::before {
+    top: 0;
+    left: 0;
+    border-top: var(--corner-thickness) solid var(--corner-color);
+    border-left: var(--corner-thickness) solid var(--corner-color);
+  }
+
+  .corner-brackets-custom::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: var(--corner-thickness) solid var(--corner-color);
+    border-right: var(--corner-thickness) solid var(--corner-color);
   }
 }

@@ -136,3 +136,58 @@
     background-color: var(--mirage-950);
   }
 }
+@layer conner {
+  /* Multi-Color Rounded Corners - Two Corners */
+  .rounded-accents {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0);
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    color: #fff;
+    padding: 40px;
+    margin: 50px;
+    text-shadow: 0px 100px 80px rgba(0, 0, 0, 0.36),
+      0px 50.049px 40.039px rgba(0, 0, 0, 0.27),
+      0px 30.147px 24.118px rgba(0, 0, 0, 0.23),
+      0px 19.32px 15.456px rgba(0, 0, 0, 0.21),
+      0px 12.522px 10.017px rgba(0, 0, 0, 0.18),
+      0px 7.882px 6.306px rgba(0, 0, 0, 0.15),
+      0px 4.529px 3.623px rgba(0, 0, 0, 0.13),
+      0px 1.993px 1.595px rgba(0, 0, 0, 0.09);
+    font-family: Inter;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .rounded-accents::before,
+  .rounded-accents::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+  }
+
+  .rounded-accents::before {
+    top: 15px;
+    left: 15px;
+    border-top: 4px solid #ff6b6b; /* Coral top */
+    border-left: 4px solid #4ecdc4; /* Teal left */
+    border-top-left-radius: 8px;
+  }
+
+  .rounded-accents::after {
+    bottom: 15px;
+    right: 15px;
+    border-bottom: 4px solid #45b7d1; /* Blue bottom */
+    border-right: 4px solid #f9ca24; /* Yellow right */
+    border-bottom-right-radius: 8px;
+  }
+}
