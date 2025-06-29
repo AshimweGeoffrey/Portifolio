@@ -1,8 +1,22 @@
 import React from "react";
 
-const GitHubRepoCards = ({ repo }) => {
-  // Language display names
-  const languageNames = {
+interface Repo {
+  name?: string;
+  description?: string;
+  language?: string;
+  stars?: number;
+  forks?: number;
+  updated?: string;
+  githubUrl?: string;
+  demoUrl?: string | null;
+}
+
+interface GitHubRepoCardsProps {
+  repo?: Repo;
+}
+
+const GitHubRepoCards: React.FC<GitHubRepoCardsProps> = ({ repo }) => {
+  const languageNames: { [key: string]: string } = {
     javascript: "JavaScript",
     python: "Python",
     html: "HTML",
@@ -13,11 +27,12 @@ const GitHubRepoCards = ({ repo }) => {
     cpp: "C++",
     c: "C",
   };
-  console.log(repo);
-  const languageName =
-    languageNames[repo?.language?.toLowerCase()] || repo?.language || "Unknown";
 
-  // Default values if repo data is missing
+  const languageName =
+    repo?.language?.toLowerCase() && languageNames[repo.language.toLowerCase()]
+      ? languageNames[repo.language.toLowerCase()]
+      : repo?.language || "Unknown";
+
   const repoData = {
     name: repo?.name || "Unknown Repository",
     description: repo?.description || "No description available",
