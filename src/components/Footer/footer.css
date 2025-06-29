@@ -1,93 +1,95 @@
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-.footer-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 200px;
-  padding: 50px;
-  h1 {
-    color: #fff;
-    font-family: Inter;
-    font-size: 58px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+@layer components {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-}
-.socials-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-}
-.socials-footer a svg {
-  transition: transform 0.3s ease, color 0.3s ease;
-  color: white;
-}
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 200px;
+    padding: 50px;
+    h1 {
+      color: #fff;
+      font-family: Inter;
+      font-size: 58px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+    }
+  }
+  .socials-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .socials-footer a svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: white;
+  }
 
-.socials-footer a:hover svg {
-  transform: scale(1.2);
-  color: #1da1f2; /* Twitter blue, or pick your brand highlight */
-}
-/* Optional targeted hovers */
+  .socials-footer a:hover svg {
+    transform: scale(1.2);
+    color: #1da1f2; /* Twitter blue, or pick your brand highlight */
+  }
+  /* Optional targeted hovers */
 
-.socials-footer a:hover:nth-child(1) svg {
-  color: #6e5494; /* GitHub purple */
-}
+  .socials-footer a:hover:nth-child(1) svg {
+    color: #6e5494; /* GitHub purple */
+  }
 
-.socials-footer a:hover:nth-child(2) svg {
-  color: #0077b5; /* LinkedIn blue */
-}
+  .socials-footer a:hover:nth-child(2) svg {
+    color: #0077b5; /* LinkedIn blue */
+  }
 
-.socials-footer a:hover:nth-child(3) svg {
-  color: #1da1f2; /* Twitter blue */
-}
-.footer-links {
-  color: #fff;
-  font-size: 18px;
-  text-decoration: none;
+  .socials-footer a:hover:nth-child(3) svg {
+    color: #1da1f2; /* Twitter blue */
+  }
+  .footer-links {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    li {
-      padding: 12px;
-      margin: 0;
-      &:hover {
-        color: #ccc;
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 12px;
+        margin: 0;
+        &:hover {
+          color: #ccc;
+        }
       }
     }
   }
-}
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  gap: 10px;
-  font-family: Inter;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  a {
-    color: rgba(255, 255, 255, 0.75);
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 10px;
     font-family: Inter;
-    font-size: 24px;
+    font-size: 28px;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 800;
     line-height: normal;
-    text-decoration: none;
-    padding: 18px;
-    border: #ccc 1px solid;
-    border-radius: 8px;
-    &:hover {
-      color: #fff;
-      background-color: rgba(255, 255, 255, 0.1);
+    a {
+      color: rgba(255, 255, 255, 0.75);
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: normal;
+      text-decoration: none;
+      padding: 18px;
+      border: #ccc 1px solid;
+      border-radius: 8px;
+      &:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 }
