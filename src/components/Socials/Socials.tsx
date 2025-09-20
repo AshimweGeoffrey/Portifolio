@@ -24,21 +24,21 @@ function Socials() {
         }}
       >
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/AshimweGeoffrey"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaGithub size={24} />
         </a>
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/ashimwegeoffrey/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin size={24} />
         </a>
         <a
-          href="https://twitter.com/yourusername"
+          href="https://x.com/GeoffreyAshimwe"
           target="_blank"
           rel="noopener noreferrer"
         >
