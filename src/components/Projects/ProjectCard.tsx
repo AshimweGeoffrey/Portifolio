@@ -2,48 +2,51 @@ import { ProjectCardTemplate } from "./project-card";
 
 const mockProjects = [
   {
-    title: "E-Commerce Dashboard",
+    title: "The Daily Grind",
     description:
-      "A comprehensive admin dashboard for managing online stores with real-time analytics, inventory management, and customer insights. Built with modern React patterns and responsive design.",
+      "The Daily Grind is a responsive eCommerce website for specialty coffee. It features product catalogs, subscription boxes, cart & wishlist systems, and promotional highlights. Built with a clean modern UI, it demonstrates practical online store functionality with focus on usability and customer experience.",
     image:
-      "https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3QlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzU4MzE3Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1758358563517-92d11dbb6e04?q=80&w=1457&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     technologies: [
       "React",
       "TypeScript",
-      "Tailwind CSS",
-      "Recharts",
-      "Supabase",
+      "CSS",
+      "Java",
+      "Spring Boot",
+      "MySQL",
     ],
-    liveUrl: "#",
-    codeUrl: "#",
-    date: "Dec 2024",
+    liveUrl: "https://coffeegrind-x.netlify.app/",
+    codeUrl: "https://github.com/AshimweGeoffrey/The-Daily-Grind",
+    date: "May 2025",
   },
   {
-    title: "Task Management App",
+    title: "VolunteerSync",
     description:
-      "A collaborative project management tool with drag-and-drop functionality, real-time updates, and team collaboration features. Perfect for agile development teams.",
+      "VolunteerSync is a community-driven platform connecting volunteers with organizations across Rwanda. It features project listings, dashboards, and real-time stats on active, completed, and upcoming initiatives. The platform empowers individuals to find opportunities matching their skills while helping NGOs and communities collaborate for lasting impact.",
     image:
-      "https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3QlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzU4MzE3Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1758359365074-25152ffb6a1b?q=80&w=1140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     technologies: [
-      "Next.js",
-      "React DnD",
-      "Prisma",
-      "PostgreSQL",
-      "TailwindCSS",
+      "C#",
+      "React",
+      "MySQL",
+      "MongoDB",
+      "ASP.NET",
+      "Css",
+      "TypeScript",
     ],
-    liveUrl: "#",
-    codeUrl: "#",
-    date: "Nov 2024",
+    liveUrl: "https://volunteersync.netlify.app/",
+    codeUrl: "https://github.com/AshimweGeoffrey/Volunteer_sync",
+    date: "March 2025",
   },
   {
-    title: "Social Media Analytics",
+    title: "Fungi Finders",
     description:
-      "Advanced analytics platform for social media marketers with interactive charts, performance tracking, and automated reporting capabilities.",
+      "Fungi Finders is an educational web project introducing users to the world of mushroom foraging. It highlights outdoor exploration, botanical knowledge, and culinary uses through an engaging, content-rich interface. This project was built as a learning exercise referenced from a Frontend Masters course, showcasing my ability to translate educational material into a polished, interactive website.",
     image:
-      "https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3QlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzU4MzE3Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    technologies: ["Vue.js", "D3.js", "Node.js", "MongoDB", "Chart.js"],
-    liveUrl: "#",
-    codeUrl: "#",
+      "https://images.unsplash.com/photo-1758360415548-06bc71b40659?q=80&w=1140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    technologies: ["Css", "JavaScript", "Node.js"],
+    liveUrl: "https://fungicss.netlify.app/",
+    codeUrl: "https://github.com/AshimweGeoffrey/Ce_frontendmasters_Css",
     date: "Oct 2024",
   },
 ];

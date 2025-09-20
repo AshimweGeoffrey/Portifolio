@@ -13,20 +13,29 @@ function Main() {
           clean code.
         </p>
         <div className="main-hero-buttons">
-	<button
-  className="main-hero-resume-btn"
-  onClick={() =>
-    window.open(
-      "https://drive.google.com/file/d/1OE_RbI43wTY9PUdcIaPdTFMYdlFbopMN/view",
-      "_blank",
-      "noopener,noreferrer"
-    )
-  }
->
-  Resume
-</button>
+          <button
+            className="main-hero-resume-btn"
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1OE_RbI43wTY9PUdcIaPdTFMYdlFbopMN/view",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Resume
+          </button>
 
-          <button className="main-hero-live-demo-btn">
+          <button
+            className="main-hero-live-demo-btn"
+            onClick={() =>
+              window.open(
+                "https://volunteersync.netlify.app/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
             <img
               src={liveDemoIcon}
               alt="Live Demo"

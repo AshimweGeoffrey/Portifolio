@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 import "./Projects.css";
 function Projects() {
   return (
-    <div className="projects parent">
+    <div className="projects parent" id="projects">
       <h2 className="section-title">Projects</h2>
       <div>
         <ProjectCard />

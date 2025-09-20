@@ -15,7 +15,15 @@ function SkillsCardSE() {
             solutions that meet both technical requirements and user needs.
           </p>
         </div>
-        <button>Projects</button>
+        <button
+          onClick={() =>
+            document
+              .getElementById("projects")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Projects
+        </button>
       </div>
       <img
         src="/cff357ed672cb3dbb3f0374e98a3b48d.png"

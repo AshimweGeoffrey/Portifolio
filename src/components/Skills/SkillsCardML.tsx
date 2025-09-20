@@ -17,7 +17,15 @@ function SkillsCardML() {
             value.
           </p>
         </div>
-        <button>Projects</button>
+        <button
+          onClick={() =>
+            document
+              .getElementById("projects")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Projects
+        </button>
       </div>
     </div>
   );
