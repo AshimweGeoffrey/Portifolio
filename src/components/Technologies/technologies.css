@@ -1,70 +1,251 @@
-.tech-tag {
-  /* example styles */
-  transition: transform 0.2s;
-}
-@keyframes shake-scale {
-  0% {
-    transform: scale(1.05) translateX(0);
-  }
-  20% {
-    transform: scale(1.05) translateX(-3px);
-  }
-  40% {
-    transform: scale(1.05) translateX(3px);
-  }
-  60% {
-    transform: scale(1.05) translateX(-2px);
-  }
-  80% {
-    transform: scale(1.05) translateX(2px);
-  }
-  100% {
-    transform: scale(1.05) translateX(0);
-  }
+:root {
+  --tech-gap: 16px;
+  --tech-radius: 14px;
+  --tech-pad: 14px 18px;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-strong: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 18px 40px -8px rgba(2, 6, 23, 0.55);
+  --accent: var(--mountain-meadow-500);
+  --text-main: rgba(255, 255, 255, 0.95);
+  --text-subtle: rgba(255, 255, 255, 0.72);
 }
 
-.tech-tag {
-  display: inline-flex;
-  padding: 0.25rem 0.75rem;
-  background-color: #f0f0f0;
-  justify-content: center;
-  align-items: center;
-  color: #333;
-  font-size: 0.875rem;
-  border-radius: 10px;
-  white-space: nowrap;
-  transition: transform 0.2s ease-in-out;
-}
-
-.tech-tag:hover {
-  animation: shake-scale 0.4s ease-in-out;
-}
-
-.tech-tag {
+/* Container for technologies */
+.technologies-root {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  padding: 0.25rem 0.75rem;
-  background-color: #f0f0f0;
-  justify-content: center;
-  align-items: center;
-  color: #333;
-  font-size: 0.875rem;
-  border-radius: 10px;
-  width: fit-content;
-  height: fit-content;
-  font-size: 16px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.techs-wrapper {
+  display: grid;
+  /* force 3 category columns so first row holds ML, Backend, Frontend */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 28px;
+}
+
+.tech-category {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-category-title {
+  margin: 0 6px;
+  font-size: 0.95rem;
+  color: var(--text-subtle);
+  font-weight: 700;
 }
 
 .techs {
   display: grid;
-  grid-template-columns: repeat(6, max-content);
-  gap: 5px;
-  padding: 3rem;
-  justify-content: center; /* centers all tags horizontally */
-  background: rgba(255, 255, 255, 0.05);
-  width: 100%;
-  height: fit-content;
-  border-radius: 92px;
-  border: 3px solid rgba(255, 255, 255, 0.44);
-  background: rgba(255, 255, 255, 0.05);
+  /* enforce 3 columns per row for each category */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 12px;
+  align-items: stretch;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Individual tech tag (card) */
+.tech-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 18px rgba(2, 6, 23, 0.35);
+  color: var(--text-main);
+  text-align: center;
+  transition: transform 300ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 220ms ease, background 220ms ease;
+  min-height: 82px;
+  position: relative;
+  overflow: visible;
+}
+
+.tech-tag:focus {
+  /* keep accessible focus visible but avoid motion/transform */
+  outline: none;
+  transform: none;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+  border-color: var(--glass-strong);
+}
+
+.tech-tag:hover {
+  transform: translateY(-6px);
+}
+
+.tech-tag .icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.015);
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.tech-tag .label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.tech-tag .sub {
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+}
+
+/* subtle entrance */
+@keyframes riseFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tech-tag {
+  /* remove auto entrance animation for a cleaner feel; keep reduced-motion respect */
+  animation: none;
+}
+
+/* Animated colorful accent ring (pseudo element) */
+.tech-tag::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.02) inset;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 350ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.tech-tag:hover::after {
+  /* accent ring appears only on hover */
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Smaller tiles + icon sizing (top-level) */
+.tech-tag {
+  min-height: 64px;
+  padding: 8px 10px;
+}
+.tech-tag .icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+.icon-initials {
+  display: inline-block;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Per-tech accent colors (small ring and icon color) */
+.tech-javascript::after {
+  box-shadow: 0 0 12px 3px rgba(247, 223, 30, 0.12);
+}
+.tech-javascript .icon {
+  color: #f7df1e;
+}
+.tech-python::after {
+  box-shadow: 0 0 12px 3px rgba(53, 114, 165, 0.12);
+}
+.tech-python .icon {
+  color: #3776ab;
+}
+.tech-react::after {
+  box-shadow: 0 0 12px 3px rgba(97, 218, 251, 0.12);
+}
+.tech-react .icon {
+  color: #61dafb;
+}
+.tech-ts::after {
+  box-shadow: 0 0 12px 3px rgba(49, 120, 198, 0.12);
+}
+.tech-ts .icon {
+  color: #3178c6;
+}
+.tech-node::after {
+  box-shadow: 0 0 12px 3px rgba(104, 160, 99, 0.12);
+}
+.tech-node .icon {
+  color: #68a063;
+}
+.tech-docker::after {
+  box-shadow: 0 0 12px 3px rgba(0, 123, 167, 0.12);
+}
+.tech-docker .icon {
+  color: #0db7ed;
+}
+.tech-aws::after {
+  box-shadow: 0 0 12px 3px rgba(255, 193, 7, 0.12);
+}
+.tech-aws .icon {
+  color: #ffbf00;
+}
+.tech-graphql::after {
+  box-shadow: 0 0 12px 3px rgba(123, 48, 255, 0.12);
+}
+.tech-graphql .icon {
+  color: #e535ab;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .techs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .techs-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .techs {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .tech-tag {
+    min-height: 84px;
+    padding: 10px;
+  }
+  .tech-tag .icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tech-tag,
+  .tech-tag * {
+    transition: none;
+    animation: none;
+  }
 }

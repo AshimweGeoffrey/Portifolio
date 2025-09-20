@@ -2,8 +2,8 @@ import ProjectCard from "./ProjectCard";
 import "./Projects.css";
 function Projects() {
   return (
-    <div className="projects">
-      <h2 className="rounded-accents">Projects</h2>
+    <div className="projects parent">
+      <h2 className="section-title">Projects</h2>
       <div>
         <ProjectCard />
       </div>
