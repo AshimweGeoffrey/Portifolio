@@ -17,28 +17,28 @@ function Footer() {
         </div>
         <div className="footer-contact">
           Email:{" "}
-          <a href="mailto:ashimwegeoffrey@example.com">
-            ashimwegeoffrey@example.com
+          <a href="mailto:ashimwegeoffrey@gmail.com">
+            ashimwegeoffrey@gmail.com
           </a>
         </div>
       </div>
       <div className="socials-footer">
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/AshimweGeoffrey"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaGithub size={24} />
         </a>
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://linkedin.com/in/ashimwegeoffrey "
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin size={24} />
         </a>
         <a
-          href="https://twitter.com/yourusername"
+          href="https://x.com/geoffreyashimwe"
           target="_blank"
           rel="noopener noreferrer"
         >
