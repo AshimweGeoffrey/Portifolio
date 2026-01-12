@@ -5,10 +5,18 @@ function Navigation() {
       <img src="/test.png" alt="Portfolio Logo" />
       <div>
         <ul>
-          <li>Home</li>
-          <li>Projects</li>
-          <li>Articles</li>
-          <li>Contact</li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="/articles">Articles</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>

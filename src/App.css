@@ -130,7 +130,7 @@
     padding: 35px 45px 45px 45px; /* top, right, bottom, left = 10px */
   }
   .app-container > .navigation {
-    margin: 0 0 0 -25px;
+    margin: 0 0 0;
   }
   .footer {
     background-color: var(--mirage-950);
