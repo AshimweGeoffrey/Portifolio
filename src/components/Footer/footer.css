@@ -9,18 +9,22 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 200px;
+    gap: 50px;
     padding: 50px;
     h1 {
       color: #fff;
       font-family: Inter;
-      font-size: 58px;
+      font-size: 40px;
       font-style: normal;
       font-weight: 900;
       line-height: normal;
     }
     @media (min-width: 800px) {
       flex-direction: row;
+      gap: 200px;
+      h1 {
+        font-size: 58px;
+      }
     }
   }
   .socials-footer {
