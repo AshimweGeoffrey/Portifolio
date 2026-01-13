@@ -122,6 +122,11 @@
         font-weight: 50;
         line-height: normal;
       }
+      @media (max-width: 800px) {
+        .main-hero-subtitle {
+          width: 350px;
+        }
+      }
     }
 
     button:hover {
@@ -211,7 +216,7 @@
 
       p {
         font-size: 18px;
-        width: 400px;
+        width: 350px;
       }
       h4 {
         font-size: 20px;

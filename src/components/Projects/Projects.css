@@ -414,7 +414,25 @@
     .project-card {
       max-width: 100%;
     }
+    .project-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
 
+    .project-actions {
+      flex-direction: column;
+    }
+
+    .overlay-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media (max-width: 400px) {
+    .project-card {
+      max-width: 100%;
+    }
     .project-header {
       flex-direction: column;
       align-items: flex-start;
@@ -437,4 +455,12 @@
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 40px;
   padding: 20px;
+}
+@media (max-width: 800px) {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+  }
 }

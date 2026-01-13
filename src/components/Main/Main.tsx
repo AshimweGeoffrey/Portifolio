@@ -6,7 +6,7 @@ function Main() {
     <div className="main-hero">
       <div className="main-hero-content">
         <h1>Ashimwe Geoffrey</h1>
-        <p>
+        <p className="main-hero-subtitle">
           Passionate about building scalable web applications that drive
           operational efficiency. Experienced in delivering custom solutions
           across multiple sectors with a focus on performance optimization and
