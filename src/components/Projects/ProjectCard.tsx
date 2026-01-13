@@ -78,7 +78,7 @@ const mockProjects = [
     liveUrl: "https://voltpark.vercel.app/",
     codeUrl:
       "https://github.com/AshimweGeoffrey/Child-malnutrition-geospatial-rwanda",
-    date: "Oct 2025",
+    date: "Nov 2025",
   },
 ];
 export default function ProjectCard() {
