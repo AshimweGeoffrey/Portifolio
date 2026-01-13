@@ -1,6 +1,16 @@
 import { Calendar, Code, ExternalLink } from "lucide-react";
 
-export function ProjectCardTemplate({ project }: { project: any }) {
+interface Project {
+  image: string;
+  title: string;
+  liveUrl: string;
+  codeUrl: string;
+  date: string;
+  description: string;
+  technologies: string[];
+}
+
+export function ProjectCardTemplate({ project }: { project: Project }) {
   return (
     <article className="project-card">
       {/* Project Image */}
