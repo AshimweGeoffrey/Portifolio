@@ -68,6 +68,18 @@ const mockProjects = [
       "https://github.com/AshimweGeoffrey/Child-malnutrition-geospatial-rwanda",
     date: "Oct 2025",
   },
+  {
+    title: "VoltPark",
+    description:
+      "VoltPark is an integrated hardware-software solution designed to streamline the electric vehicle (EV) charging experience while optimizing parking space utilization. It addresses the growing need for organized, real-time accessible charging infrastructure in urban environments and commercial hubs.",
+    image:
+      "https://images.unsplash.com/vector-1768305341788-2378da367115?q=80&w=1201&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    technologies: ["Next.js", "TypeScript", "Google Maps API", "superbase"],
+    liveUrl: "https://voltpark.vercel.app/",
+    codeUrl:
+      "https://github.com/AshimweGeoffrey/Child-malnutrition-geospatial-rwanda",
+    date: "Oct 2025",
+  },
 ];
 export default function ProjectCard() {
   return (

@@ -1,7 +1,12 @@
 import "./footer.css";
 
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-function Footer() {
+
+interface FooterProps {
+  onContactClick?: () => void;
+}
+
+function Footer({ onContactClick }: FooterProps) {
   return (
     <div className="footer-container">
       <div className="footer-content">
@@ -9,10 +14,25 @@ function Footer() {
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li>Home</li>
-            <li>Articles</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="/articles">Articles</a>
+            </li>
+            <li>
+              <button
+                className="nav-contact-btn"
+                onClick={() => {
+                  onContactClick?.();
+                }}
+              >
+                Contact
+              </button>
+            </li>
           </ul>
         </div>
         <div className="footer-contact">

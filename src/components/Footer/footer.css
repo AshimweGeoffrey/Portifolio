@@ -65,13 +65,28 @@
 
     ul {
       list-style: none;
+      margin: 0;
       padding: 0;
       li {
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+        button {
+          background: none;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          font-size: 18px;
+          text-decoration: none;
+          margin: 0px;
+        }
+        a:hover,
+        button:hover {
+          color: var(--mountain-meadow-400);
+        }
         padding: 12px;
         margin: 0;
-        &:hover {
-          color: #ccc;
-        }
       }
     }
   }
