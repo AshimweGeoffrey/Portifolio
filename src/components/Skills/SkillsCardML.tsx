@@ -6,15 +6,12 @@ function SkillsCardML() {
         <div className="skills-card-text">
           <h3>ML Engineer</h3>
           <p>
-            ML Engineer specializing in end-to-end machine learning solutions
-            from research to production deployment. Proficient in TensorFlow,
-            PyTorch, and scikit-learn for building models in computer vision,
-            NLP, and predictive analytics. Experienced in MLOps practices, model
-            versioning, and scaling ML systems on cloud platforms. Expert in
-            data preprocessing, feature engineering, and building automated ML
-            pipelines for continuous model improvement. Focused on deploying
-            robust, real-time inference systems that deliver measurable business
-            value.
+            Building foundational skills in applied machine learning with
+            experience in data preprocessing, feature engineering, and training
+            baseline models using Python and scikit-learn. Currently working on
+            applying ML to public-sector datasets (health, geospatial, and
+            socioeconomic data) and integrating predictive components into
+            analytical dashboards.
           </p>
         </div>
         <button

@@ -49,6 +49,25 @@ const mockProjects = [
     codeUrl: "https://github.com/AshimweGeoffrey/Ce_frontendmasters_Css",
     date: "Oct 2024",
   },
+  {
+    title: "Nisr Food Security",
+    description:
+      "Research-oriented system for mapping and predicting district-level child malnutrition risk in Rwanda. This project combines geospatial analysis, statistical profiling, and machine-learning modelling using official NISR datasets to produce actionable, district-level risk scores and interactive visualizations.",
+    image:
+      "https://images.unsplash.com/vector-1768258383679-548ba2ab0963?q=80&w=1501&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    technologies: [
+      "Python",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "FastAPI",
+      "ArcGis",
+    ],
+    liveUrl: "https://nisrmalnutrution.vercel.app//",
+    codeUrl:
+      "https://github.com/AshimweGeoffrey/Child-malnutrition-geospatial-rwanda",
+    date: "Oct 2025",
+  },
 ];
 export default function ProjectCard() {
   return (
