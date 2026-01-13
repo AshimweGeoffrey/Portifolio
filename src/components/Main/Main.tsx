@@ -1,7 +1,12 @@
 import "./Main.css";
 import liveDemoIcon from "../../assets/liveDemoIcon.svg";
 import ProfileCard from "./ProfileCard";
-function Main() {
+
+interface MainProps {
+  onContactClick?: () => void;
+}
+
+function Main({ onContactClick }: MainProps) {
   return (
     <div className="main-hero">
       <div className="main-hero-content">
@@ -59,7 +64,7 @@ function Main() {
           </p>
         </div>
       </div>
-      <ProfileCard />
+      <ProfileCard onContactClick={onContactClick} />
     </div>
   );
 }

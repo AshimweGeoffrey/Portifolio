@@ -30,6 +30,22 @@
       }
     }
 
+    .nav-contact-btn {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-family: var(--font-family, "Inter", sans-serif);
+      font-weight: 500;
+      color: var(--white-50);
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 0;
+
+      &:hover {
+        color: var(--mountain-meadow-400);
+      }
+    }
+
     img {
       width: 42px; /* fixed width or max-width is better than % here */
       height: 42px; /* maintain aspect ratio */
@@ -114,6 +130,18 @@
               display: block;
               padding: 0.75rem 1.5rem;
               transition: background 0.3s ease, color 0.3s ease;
+
+              &:hover {
+                background: rgba(255, 255, 255, 0.1);
+              }
+            }
+
+            .nav-contact-btn {
+              display: block;
+              width: 100%;
+              padding: 0.75rem 1.5rem;
+              transition: background 0.3s ease, color 0.3s ease;
+              text-align: center;
 
               &:hover {
                 background: rgba(255, 255, 255, 0.1);

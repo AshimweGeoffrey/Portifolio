@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./Navigation.css";
 
-function Navigation() {
+interface NavigationProps {
+  onContactClick?: () => void;
+}
+
+function Navigation({ onContactClick }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -38,9 +42,15 @@ function Navigation() {
             </a>
           </li>
           <li>
-            <a href="#contact" onClick={() => setIsOpen(false)}>
+            <button
+              className="nav-contact-btn"
+              onClick={() => {
+                setIsOpen(false);
+                onContactClick?.();
+              }}
+            >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </div>
