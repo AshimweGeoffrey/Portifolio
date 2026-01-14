@@ -8,6 +8,38 @@
     object-fit: cover;
     border-radius: 10px;
   }
+  .article-tags {
+    display: flex;
+    gap: 10px;
+    .tag {
+      color: var(--white-50);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+    .article-tags {
+      display: flex;
+      gap: 5px;
+      .tag {
+        color: var(--white-50);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        padding: 2px 2.5px;
+        border-radius: 8px;
+        font-size: 8px;
+      }
+    }
+  }
 }
 .article-details {
   display: flex;
@@ -29,18 +61,7 @@
     font-size: 16px;
   }
 }
-.article-tags {
-  display: flex;
-  gap: 10px;
-  .tag {
-    color: var(--white-50);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-}
+
 .message-container {
   display: flex;
   flex-direction: row;
@@ -53,6 +74,15 @@
     max-width: 600px;
     color: var(--mountain-meadow-500);
     font-family: "fira Code", monospace;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 40px;
+    p {
+      font-size: 20px;
+      text-align: center;
+      max-width: 100%;
+    }
   }
 }
 .message-header {
