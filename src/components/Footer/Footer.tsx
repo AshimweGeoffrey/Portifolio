@@ -18,7 +18,7 @@ function Footer({ onContactClick }: FooterProps) {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="#projects">Projects</a>
+              <a href="/#projects">Projects</a>
             </li>
             <li>
               <a href="/articles">Articles</a>

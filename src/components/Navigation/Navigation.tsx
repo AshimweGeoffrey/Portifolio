@@ -32,7 +32,7 @@ function Navigation({ onContactClick }: NavigationProps) {
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={() => setIsOpen(false)}>
+            <a href="/#projects" onClick={() => setIsOpen(false)}>
               Projects
             </a>
           </li>
