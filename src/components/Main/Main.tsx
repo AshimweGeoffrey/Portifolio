@@ -35,7 +35,7 @@ function Main({ onContactClick }: MainProps) {
             className="main-hero-live-demo-btn"
             onClick={() =>
               window.open(
-                "https://volunteersync.netlify.app/",
+                "https://voltpark.vercel.app/",
                 "_blank",
                 "noopener,noreferrer"
               )
