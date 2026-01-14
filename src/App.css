@@ -138,6 +138,12 @@
   .app-container > .navigation {
     margin: 0;
   }
+  .articles-page {
+    display: flex;
+    flex-direction: column;
+    gap: 240px;
+    margin: 0 100px 0 100px;
+  }
   .footer {
     background-color: var(--mirage-950);
   }
