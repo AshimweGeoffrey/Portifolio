@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 interface NavigationProps {
@@ -14,7 +15,9 @@ function Navigation({ onContactClick }: NavigationProps) {
 
   return (
     <nav className="navigation-component">
-      <img src="/test.png" alt="Portfolio Logo" />
+      <Link to="/">
+        <img src="/test.png" alt="Portfolio Logo" />
+      </Link>
       <button
         className={`hamburger ${isOpen ? "active" : ""}`}
         onClick={toggleMenu}
@@ -27,9 +30,9 @@ function Navigation({ onContactClick }: NavigationProps) {
       <div className={`nav-menu ${isOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <a href="/" onClick={() => setIsOpen(false)}>
+            <Link to="/" onClick={() => setIsOpen(false)}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a href="/#projects" onClick={() => setIsOpen(false)}>
@@ -37,9 +40,9 @@ function Navigation({ onContactClick }: NavigationProps) {
             </a>
           </li>
           <li>
-            <a href="/articles" onClick={() => setIsOpen(false)}>
+            <Link to="/articles" onClick={() => setIsOpen(false)}>
               Articles
-            </a>
+            </Link>
           </li>
           <li>
             <button
