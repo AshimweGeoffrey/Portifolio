@@ -1,13 +1,10 @@
 import "./App.css";
-import Main from "./components/Main/Main";
-import Navigation from "./components/Navigation/Navigation";
-import Skills from "./components/Skills/Skills";
-import Projects from "./components/Projects/Projects";
-import Technologies from "./components/Technologies/Technologies";
-import Footer from "./components/Footer/Footer";
-import Socials from "./components/Socials/Socials";
+import Layout from "./components/layout";
+import HomeContent from "./components/Home";
 import Contact from "./components/Contact/Contact";
+import Articles from "./components/Articles";
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -24,21 +21,16 @@ function App() {
 
   return (
     <>
-      <div className="app-container">
-        <div className="navigation">
-          <Navigation onContactClick={openContact} />
-        </div>
-        <div>
-          <Socials />
-        </div>
-        <Main onContactClick={openContact} />
-        <Skills />
-        <Projects />
-        <Technologies />
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
+      <Layout onContactClick={openContact}>
+        <Routes>
+          <Route
+            path="/"
+            element={<HomeContent onContactClick={openContact} />}
+          />
+          <Route path="/articles" element={<Articles />} />
+        </Routes>
+      </Layout>
+
       <Contact isOpen={isContactOpen} onClose={closeContact} />
     </>
   );
