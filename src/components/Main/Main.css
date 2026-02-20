@@ -58,7 +58,9 @@
       width: 35%;
       height: 50px;
       border: var(--big-stone-200) solid 0.125px;
-      font: rgba(255, 255, 255, 0.75) 400 16px "Inter", sans-serif;
+      font:
+        rgba(255, 255, 255, 0.75) 400 16px "Inter",
+        sans-serif;
       background-color: transparent;
       border-radius: 20px;
       color: var(--white-50);
@@ -72,10 +74,10 @@
     img {
       position: relative;
       width: 400px;
-      top: -200px;
+      height: 450px;
+      top: -70px;
       border-bottom-left-radius: 100px;
       border-bottom-right-radius: 100px;
-      margin-bottom: -150px;
     }
     button:hover {
       background-color: rgba(255, 255, 255, 0.1);
