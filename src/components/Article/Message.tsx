@@ -11,8 +11,8 @@ export default function Message() {
         <ArrowDownToDot size={56} color={"#10B981"} />
       </div>
       <p>
-        A senior-year design student who trying to specialize in 3D modeling &
-        texturing.
+        A senior software engineering student specializing in full-stack
+        development, with growing focus on machine learning and AI systems.
       </p>
     </div>
   );
